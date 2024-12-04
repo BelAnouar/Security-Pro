@@ -12,7 +12,7 @@ pipeline{
                    checkout scm: [
                        $class: 'GitSCM',
                        branches: [[name: params.GITHUB_SHA]],
-                       userRemoteConfigs: [[url: 'YOUR_REPO_URL']]
+                       userRemoteConfigs: [[url: 'https://github.com/BelAnouar/Security-Pro.git']]
                    ]
                }
            }
