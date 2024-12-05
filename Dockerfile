@@ -3,6 +3,7 @@ LABEL authors="Anouar_bel"
 
 WORKDIR /app
 VOLUME /tmp
+
 COPY target/*.jar /app/spring-security.jar
 
 

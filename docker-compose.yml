@@ -1,2 +1,26 @@
-version: "3.8"
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@db:1521:xe
+      - SPRING_DATASOURCE_USERNAME=app_user
+      - SPRING_DATASOURCE_PASSWORD=app_password
+    depends_on:
+      - db
 
+  db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracledb
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: rootpassword
+      APP_USER: app_user
+      APP_USER_PASSWORD: app_password
+    volumes:
+      - ./init.sql:/container-entrypoint-initdb.d/init.sql
