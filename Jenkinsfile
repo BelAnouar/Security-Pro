@@ -14,7 +14,7 @@ pipeline {
     environment {
         DOCKER_REGISTRY = 'docker.io/anwarbel'
         APP_NAME = 'bro-app'
-        DOCKER_CREDENTIALS_ID = 'dckr_pat_I7rH5aw3b2nwNVl144r0Fte9iUM'
+        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
     }
 
     stages {
@@ -50,13 +50,6 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh 'mvn sonar:sonar'
-                }
-            }
-        }
 
         stage('Build Docker Image') {
             steps {
