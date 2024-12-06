@@ -7,27 +7,24 @@ on:
     branches: [ master ]
 
 jobs:
-
   trigger-jenkins-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-
       - name: Trigger Jenkins Build
-        env:
-          JENKINS_URL: ${{ secrets.JENKINS_URL }}
-          JENKINS_USER: ${{ secrets.JENKINS_USER }}
-          JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
         run: |
-          # Trigger Jenkins job using curl
+          # First, attempt to get the crumb
+          CRUMB=$(curl -s "http://localhost:8080/crumbIssuer/api/xml" | grep -oP '(?<=<crumb>).*?(?=</crumb>)')
+          
+          # Trigger Jenkins job with crumb
           curl -X POST \
-            -u "$JENKINS_USER:$JENKINS_TOKEN" \
-            "$JENKINS_URL/job/YOUR_JOB_NAME/build" \
-            --data-urlencode json='{
-              "parameter": [
-                {"name":"GITHUB_SHA", "value":"${{ github.sha }}"},
-                {"name":"GITHUB_REF", "value":"${{ github.ref }}"}
-              ]
-            }'
+          -H "Jenkins-Crumb:$CRUMB" \
+          "http://localhost:8080/job/Security-Pro/build" \
+          --data-urlencode json='{
+            "parameter": [
+              {"name":"GITHUB_SHA", "value":"'"${{ github.sha }}"'"},
+              {"name":"GITHUB_REF", "value":"'"${{ github.ref }}"'"}
+            ]
+          }'

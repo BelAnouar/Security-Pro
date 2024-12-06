@@ -1,35 +1,118 @@
-pipeline{
-   agent any
+pipeline {
+    agent any
 
-   parameters {
-           string(name: 'GITHUB_SHA', defaultValue: '', description: 'GitHub Commit SHA')
-           string(name: 'GITHUB_REF', defaultValue: '', description: 'GitHub Branch/Ref')
-       }
-   stages{
-    stage('Checkout') {
-               steps {
+    tools {
+        maven 'Maven 3.4.0'
+        jdk 'JDK 22'
+    }
 
-                   checkout scm: [
-                       $class: 'GitSCM',
-                       branches: [[name: params.GITHUB_SHA]],
-                       userRemoteConfigs: [[url: 'https://github.com/BelAnouar/Security-Pro.git']]
-                   ]
-               }
-           }
-       stage('Build'){
-            steps{
+    parameters {
+        string(name: 'GITHUB_SHA', defaultValue: '', description: 'GitHub Commit SHA')
+        string(name: 'GITHUB_REF', defaultValue: '', description: 'GitHub Branch/Ref')
+    }
 
+    environment {
+        DOCKER_REGISTRY = 'docker.io/anwarbel'
+        APP_NAME = 'bro-app'
+        DOCKER_CREDENTIALS_ID = 'dckr_pat_I7rH5aw3b2nwNVl144r0Fte9iUM'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm: [
+                    $class: 'GitSCM',
+                    branches: [[name: params.GITHUB_SHA ?: '*/master']],
+                    userRemoteConfigs: [[url: 'https://github.com/BelAnouar/Security-Pro.git']]
+                ]
             }
-       }
-       stage('test'){
-                   steps{
+        }
 
-                   }
-              }
-       stage('deploy'){
-                   steps{
+        stage('Build') {
+            steps {
+                script {
+                    sh 'mvn clean package -DskipTests'
+                }
+            }
+        }
 
-                   }
-       }
-   }
+        stage('Unit Tests') {
+            steps {
+                script {
+                    sh 'mvn test'
+                }
+            }
+            post {
+                always {
+                    junit '**/target/surefire-reports/*.xml'
+                    jacoco execPattern: 'target/jacoco.exec'
+                }
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}")
+                }
+            }
+        }
+
+        stage('Push to Docker Registry') {
+            steps {
+                script {
+                    docker.withRegistry('https://your-docker-registry', DOCKER_CREDENTIALS_ID) {
+                        docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push()
+                        docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push('latest')
+                    }
+                }
+            }
+        }
+
+        stage('Deploy to Staging') {
+            steps {
+                script {
+
+                    sh '''
+                        docker-compose down
+                        docker-compose up -d
+                    '''
+
+                }
+            }
+        }
+
+        stage('Integration Tests') {
+            steps {
+                script {
+                    sh 'mvn verify -P integration-tests'
+                }
+            }
+        }
+
+        stage('Deploy to Production') {
+            when {
+                branch 'master'
+            }
+            steps {
+                script {
+
+                    sh '''
+                        echo "Deploying to production"
+                        # Add your production deployment commands
+                    '''
+                }
+            }
+        }
+    }
+
+
 }

@@ -1,17 +1,17 @@
-version: '3.8'
 services:
   app:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8084:8084"
     environment:
       - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@db:1521:xe
-      - SPRING_DATASOURCE_USERNAME=app_user
-      - SPRING_DATASOURCE_PASSWORD=app_password
+      - SPRING_DATASOURCE_USERNAME=SYSTEM
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   db:
     image: gvenzl/oracle-xe:21-slim
@@ -24,3 +24,8 @@ services:
       APP_USER_PASSWORD: app_password
     volumes:
       - ./init.sql:/container-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'SELECT 1 FROM DUAL;' | sqlplus -s SYSTEM/rootpassword@localhost:1521/xe || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
