@@ -23,7 +23,7 @@ pipeline {
                 checkout scm: [
                     $class: 'GitSCM',
                     branches: [[name: params.GITHUB_SHA ?: '*/master']],
-                    userRemoteConfigs: [[url: 'https://github.com/BelAnouar/Security-Pro.git']]
+                    userRemoteConfigs: [[url: ' https://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@github.com/BelAnouar/Security-Pro.git']]
                 ]
             }
         }
