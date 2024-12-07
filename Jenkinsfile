@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven 3.8.1'
-        jdk 'jdk 11'
+        maven 'Maven'
+        jdk 'JDK'
     }
 
     parameters {
@@ -105,7 +105,17 @@ pipeline {
                 }
             }
         }
+
     }
+
+     post {
+            success {
+                echo 'Build and Deploy succeeded!'
+            }
+            failure {
+                echo 'Build or Deploy failed!'
+            }
+     }
 
 
 }
