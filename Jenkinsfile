@@ -4,6 +4,7 @@ pipeline {
     tools {
         maven 'Maven'
         jdk 'JDK'
+        docker 'Docker'
     }
 
     parameters {
@@ -12,7 +13,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_REGISTRY = 'docker.io/anwarbel'
+        DOCKER_REGISTRY = 'https://registry.hub.docker.com'
         APP_NAME = 'bro-app'
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
     }
@@ -54,7 +55,7 @@ pipeline {
         stage('Push to Docker Registry') {
             steps {
                 script {
-                    docker.withRegistry('https://your-docker-registry', DOCKER_CREDENTIALS_ID) {
+                    docker.withRegistry('https://registry.hub.docker.com', DOCKER_CREDENTIALS_ID) {
                         docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push()
                         docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push('latest')
                     }
