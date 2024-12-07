@@ -13,7 +13,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_REGISTRY = 'https://registry.hub.docker.com'
+        DOCKER_REGISTRY = 'anwarbel'
         APP_NAME = 'bro-app'
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
     }
