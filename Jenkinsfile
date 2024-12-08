@@ -52,6 +52,12 @@ pipeline {
                 }
             }
         }
+        stage('verify tool docker '){
+            steps{
+                sh 'docker version'
+
+            }
+        }
 
        stage('Push to Docker Registry') {
            steps {
