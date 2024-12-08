@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
 
-                 dockerImage =    docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}")
+                  dockerImage =  docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}")
                 }
             }
         }
@@ -62,11 +62,11 @@ pipeline {
 
        stage('Push to Docker Registry') {
            steps {
-              script {
-                 docker.withRegistry( '', DOCKER_CREDENTIALS_ID ) {
-                 dockerImage.push()
-              }
+               script {
 
+                 docker.withRegistry( '', registryCredential ) {
+                 dockerImage.push()
+               }
            }
        }
 
