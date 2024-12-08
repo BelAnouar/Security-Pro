@@ -20,8 +20,6 @@ pipeline {
     }
 
     stages {
-
-
         stage('Build') {
             steps {
                 script {
@@ -44,41 +42,37 @@ pipeline {
             }
         }
 
-
         stage('Build Docker Image') {
             steps {
                 script {
-
-                  dockerImage =  docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}")
+                    dockerImage = docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}")
                 }
             }
         }
-        stage('verify tool docker '){
-            steps{
-                sh 'docker version'
 
+        stage('Verify Docker Tool') {
+            steps {
+                sh 'docker version'
             }
         }
 
-       stage('Push to Docker Registry') {
-           steps {
-               script {
-
-                 docker.withRegistry( '', registryCredential ) {
-                 dockerImage.push()
-               }
-           }
-       }
+        stage('Push to Docker Registry') {
+            steps {
+                script {
+                    docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
 
         stage('Deploy to Staging') {
             steps {
                 script {
-
                     sh '''
                         docker-compose down
                         docker-compose up -d
                     '''
-
                 }
             }
         }
@@ -97,7 +91,6 @@ pipeline {
             }
             steps {
                 script {
-
                     sh '''
                         echo "Deploying to production"
                         # Add your production deployment commands
@@ -105,17 +98,14 @@ pipeline {
                 }
             }
         }
-
     }
 
-     post {
-            success {
-                echo 'Build and Deploy succeeded!'
-            }
-            failure {
-                echo 'Build or Deploy failed!'
-            }
-     }
-
-
+    post {
+        success {
+            echo 'Build and Deploy succeeded!'
+        }
+        failure {
+            echo 'Build or Deploy failed!'
+        }
+    }
 }
