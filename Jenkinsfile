@@ -15,7 +15,7 @@ pipeline {
     environment {
         PATH = "${tool 'Docker'}/bin:${env.PATH}"
         DOCKER_REGISTRY = 'anwarbel'
-        APP_NAME = 'bro-app'
+        APP_NAME = 'Secuurity-Pro-app'
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
 
 
