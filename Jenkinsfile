@@ -17,9 +17,6 @@ pipeline {
         DOCKER_REGISTRY = 'anwarbel'
         APP_NAME = 'security-pro-app'
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
-
-
-
     }
 
     stages {
@@ -58,6 +55,7 @@ pipeline {
                 sh 'docker version'
             }
         }
+
         stage('Verify Docker') {
             steps {
                 script {
@@ -67,22 +65,22 @@ pipeline {
             }
         }
 
-       stage('Push to Docker Registry') {
-           steps {
-               script {
-                   withCredentials([usernamePassword(
-                       credentialsId: DOCKER_CREDENTIALS_ID,
-                       usernameVariable: 'DOCKER_USERNAME',
-                       passwordVariable: 'DOCKER_PASSWORD'
-                   )]) {
-                       sh """
-                           docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-                           docker push ${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}
-                       """
-                   }
-               }
-           }
-       }
+        stage('Push to Docker Registry') {
+            steps {
+                script {
+                    withCredentials([usernamePassword(
+                        credentialsId: DOCKER_CREDENTIALS_ID,
+                        usernameVariable: 'DOCKER_USERNAME',
+                        passwordVariable: 'DOCKER_PASSWORD'
+                    )]) {
+                        sh '''
+                            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+                            docker push "$DOCKER_REGISTRY/$APP_NAME:$BUILD_NUMBER"
+                        '''
+                    }
+                }
+            }
+        }
 
         stage('Deploy to Staging') {
             steps {
