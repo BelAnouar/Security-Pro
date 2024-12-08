@@ -13,10 +13,12 @@ pipeline {
     }
 
     environment {
+        PATH = "${tool 'Docker'}/bin:${env.PATH}"
         DOCKER_REGISTRY = 'anwarbel'
         APP_NAME = 'bro-app'
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
         dockerImage = ''
+
     }
 
     stages {
@@ -53,6 +55,14 @@ pipeline {
         stage('Verify Docker Tool') {
             steps {
                 sh 'docker version'
+            }
+        }
+        stage('Verify Docker') {
+            steps {
+                script {
+                    sh 'which docker'
+                    sh 'docker --version'
+                }
             }
         }
 
