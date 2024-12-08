@@ -53,16 +53,16 @@ pipeline {
             }
         }
 
-        stage('Push to Docker Registry') {
-            steps {
-                script {
-                    docker.withRegistry('https://hub.docker.com/repository/docker/anwarbel/spring-bro/general', DOCKER_CREDENTIALS_ID) {
-                        docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push()
-                        docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push('latest')
-                    }
-                }
-            }
-        }
+       stage('Push to Docker Registry') {
+           steps {
+               script {
+                   docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
+                       docker.image("anwarbel/spring-bro:${env.BUILD_NUMBER}").push()
+                       docker.image("anwarbel/spring-bro:${env.BUILD_NUMBER}").push('latest')
+                   }
+               }
+           }
+       }
 
         stage('Deploy to Staging') {
             steps {
