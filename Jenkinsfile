@@ -56,7 +56,7 @@ pipeline {
         stage('Push to Docker Registry') {
             steps {
                 script {
-                    docker.withRegistry('anwarbel/spring-bro', DOCKER_CREDENTIALS_ID) {
+                    docker.withRegistry('https://hub.docker.com/repository/docker/anwarbel/spring-bro/general', DOCKER_CREDENTIALS_ID) {
                         docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push()
                         docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push('latest')
                     }
