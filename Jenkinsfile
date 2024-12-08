@@ -18,8 +18,7 @@ pipeline {
         APP_NAME = 'bro-app'
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
 
-        DOCKER_USERNAME = credentials('DOCKER_USERNAME')
-        DOCKER_PASSWORD = credentials('DOCKER_PASSWORD')
+
 
     }
 
