@@ -17,7 +17,9 @@ pipeline {
         DOCKER_REGISTRY = 'anwarbel'
         APP_NAME = 'bro-app'
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
-        dockerImage = ''
+
+        DOCKER_USERNAME = credentials('docker-username')
+        DOCKER_PASSWORD = credentials('docker-password')
 
     }
 
@@ -47,7 +49,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dockerImage = docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}")
+                    docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}")
                 }
             }
         }
@@ -66,15 +68,22 @@ pipeline {
             }
         }
 
-        stage('Push to Docker Registry') {
-            steps {
-                script {
-                    docker.withRegistry('', DOCKER_CREDENTIALS_ID) {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
+       stage('Push to Docker Registry') {
+           steps {
+               script {
+                   withCredentials([usernamePassword(
+                       credentialsId: DOCKER_CREDENTIALS_ID,
+                       usernameVariable: 'DOCKER_USERNAME',
+                       passwordVariable: 'DOCKER_PASSWORD'
+                   )]) {
+                       sh """
+                           docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+                           docker push ${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}
+                       """
+                   }
+               }
+           }
+       }
 
         stage('Deploy to Staging') {
             steps {
