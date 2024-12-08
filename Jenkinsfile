@@ -47,6 +47,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    sh 'chmod -R 777 '
                     docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}")
                 }
             }
@@ -55,7 +56,7 @@ pipeline {
         stage('Push to Docker Registry') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', DOCKER_CREDENTIALS_ID) {
+                    docker.withRegistry('anwarbel/spring-bro', DOCKER_CREDENTIALS_ID) {
                         docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push()
                         docker.image("${DOCKER_REGISTRY}/${APP_NAME}:${env.BUILD_NUMBER}").push('latest')
                     }
