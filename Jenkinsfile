@@ -65,22 +65,7 @@ pipeline {
             }
         }
 
-        stage('Push to Docker Registry') {
-            steps {
-                script {
-                    withCredentials([usernamePassword(
-                        credentialsId: DOCKER_CREDENTIALS_ID,
-                        usernameVariable: 'DOCKER_USERNAME',
-                        passwordVariable: 'DOCKER_PASSWORD'
-                    )]) {
-                        sh '''
-                            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-                            docker push "$DOCKER_REGISTRY/$APP_NAME:$BUILD_NUMBER"
-                        '''
-                    }
-                }
-            }
-        }
+        
 
         stage('Deploy to Staging') {
             steps {
