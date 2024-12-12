@@ -1,10 +1,10 @@
-name: Jenkins CI/CD Pipeline
+name: Trigger Jenkins Build
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   trigger-jenkins-build:
@@ -13,18 +13,45 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Trigger Jenkins Build
+      - name: Debug information
         run: |
-          # First, attempt to get the crumb
-          CRUMB=$(curl -s "http://localhost:8080/crumbIssuer/api/xml" | grep -oP '(?<=<crumb>).*?(?=</crumb>)')
+          echo "Docker version:"
+          docker --version
+          echo "Docker info:"
+          docker info
+          echo "Current user:"
+          whoami
+          echo "Current directory:"
+          pwd
+          echo "Directory contents:"
+          ls -la
+
+      - name: Trigger Jenkins Build
+        env:
+          JENKINS_URL: ${{ secrets.JENKINS_URL }}
+          JENKINS_USER: ${{ secrets.JENKINS_USER }}
+          JENKINS_API_TOKEN: ${{ secrets.JENKINS_API_TOKEN }}
+        run: |
+          echo "Fetching Jenkins crumb..."
+          CRUMB=$(curl -s -u "${JENKINS_USER}:${JENKINS_API_TOKEN}" "${JENKINS_URL}/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,\":\",//crumb)")
           
-          # Trigger Jenkins job with crumb
-          curl -X POST \
-          -H "Jenkins-Crumb:$CRUMB" \
-          "http://localhost:8080/job/Security-Pro/build" \
-          --data-urlencode json='{
-            "parameter": [
-              {"name":"GITHUB_SHA", "value":"'"${{ github.sha }}"'"},
-              {"name":"GITHUB_REF", "value":"'"${{ github.ref }}"'"}
-            ]
-          }'
+          if [ -z "$CRUMB" ]; then
+            echo "Failed to obtain Jenkins crumb. Check your Jenkins configuration and credentials."
+            exit 1
+          fi
+          
+          echo "Triggering Jenkins job..."
+          RESPONSE=$(curl -s -X POST \
+            -u "${JENKINS_USER}:${JENKINS_API_TOKEN}" \
+            -H "$CRUMB" \
+            "${JENKINS_URL}/job/Security-Pro/buildWithParameters" \
+            --data-urlencode "GITHUB_SHA=${{ github.sha }}" \
+            --data-urlencode "GITHUB_REF=${{ github.ref }}")
+          
+          if [[ $RESPONSE == *"Error"* ]]; then
+            echo "Failed to trigger Jenkins job. Response: $RESPONSE"
+            exit 1
+          else
+            echo "Jenkins job triggered successfully!"
+          fi
+
