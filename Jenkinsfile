@@ -72,7 +72,7 @@ pipeline {
         stage('Integration Tests') {
             steps {
                 script {
-                    sh 'mvn verify -P integration-tests'
+                    sh 'mvn verify -P prod'
                 }
             }
         }
