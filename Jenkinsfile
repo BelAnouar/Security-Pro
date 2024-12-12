@@ -67,16 +67,7 @@ pipeline {
 
         
 
-        stage('Deploy to Staging') {
-            steps {
-                script {
-                    sh '''
-                        docker-compose down
-                        docker-compose up -d
-                    '''
-                }
-            }
-        }
+        
 
         stage('Integration Tests') {
             steps {
