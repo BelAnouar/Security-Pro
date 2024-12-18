@@ -1,0 +1,378 @@
+2024-12-15 21:51:35 - Starting BriefApplication using Java 22.0.1 with PID 20360 (C:\Users\ycode\IdeaProjects\bro\target\classes started by Anouar_bel in C:\Users\ycode\IdeaProjects\bro)
+2024-12-15 21:51:35 - The following 1 profile is active: "dev"
+2024-12-15 21:51:37 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15 21:51:37 - Finished Spring Data repository scanning in 189 ms. Found 4 JPA repository interfaces.
+2024-12-15 21:51:39 - Tomcat initialized with port 8084 (http)
+2024-12-15 21:51:39 - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:51:39 - Starting service [Tomcat]
+2024-12-15 21:51:39 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-15 21:51:39 - Initializing Spring embedded WebApplicationContext
+2024-12-15 21:51:39 - Root WebApplicationContext: initialization completed in 4147 ms
+2024-12-15 21:51:39 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15 21:51:39 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15 21:51:39 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-15 21:51:39 - HHH000026: Second-level cache disabled
+2024-12-15 21:51:40 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15 21:51:40 - HikariPool-1 - Starting...
+2024-12-15 21:51:40 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@2a120c88
+2024-12-15 21:51:40 - HikariPool-1 - Start completed.
+2024-12-15 21:51:41 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-15 21:51:42 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15 21:51:51 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 21:51:52 - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2024-12-15 21:51:52 - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2024-12-15 21:51:53 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CustomAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-15 21:51:53 - Starting ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:51:53 - Tomcat started on port 8084 (http) with context path '/'
+2024-12-15 21:51:53 - Started BriefApplication in 19.558 seconds (process running for 21.785)
+2024-12-15 21:52:38 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-15 21:52:38 - Graceful shutdown complete
+2024-12-15 21:52:38 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 21:52:38 - HikariPool-1 - Shutdown initiated...
+2024-12-15 21:52:38 - HikariPool-1 - Shutdown completed.
+2024-12-15 21:52:43 - Starting BriefApplication using Java 22.0.1 with PID 19804 (C:\Users\ycode\IdeaProjects\bro\target\classes started by Anouar_bel in C:\Users\ycode\IdeaProjects\bro)
+2024-12-15 21:52:43 - The following 1 profile is active: "dev"
+2024-12-15 21:52:44 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15 21:52:44 - Finished Spring Data repository scanning in 144 ms. Found 4 JPA repository interfaces.
+2024-12-15 21:52:45 - Tomcat initialized with port 8084 (http)
+2024-12-15 21:52:45 - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:52:45 - Starting service [Tomcat]
+2024-12-15 21:52:45 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-15 21:52:45 - Initializing Spring embedded WebApplicationContext
+2024-12-15 21:52:45 - Root WebApplicationContext: initialization completed in 1925 ms
+2024-12-15 21:52:45 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15 21:52:45 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15 21:52:45 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-15 21:52:45 - HHH000026: Second-level cache disabled
+2024-12-15 21:52:46 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15 21:52:46 - HikariPool-1 - Starting...
+2024-12-15 21:52:47 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@1acc873b
+2024-12-15 21:52:47 - HikariPool-1 - Start completed.
+2024-12-15 21:52:47 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-15 21:52:48 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15 21:52:57 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 21:52:58 - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2024-12-15 21:52:58 - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2024-12-15 21:52:59 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CustomAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-15 21:52:59 - Starting ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:52:59 - Tomcat started on port 8084 (http) with context path '/'
+2024-12-15 21:52:59 - Started BriefApplication in 16.787 seconds (process running for 17.499)
+2024-12-15 21:54:17 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-15 21:54:17 - Graceful shutdown complete
+2024-12-15 21:54:17 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 21:54:17 - HikariPool-1 - Shutdown initiated...
+2024-12-15 21:54:17 - HikariPool-1 - Shutdown completed.
+2024-12-15 21:54:20 - Starting BriefApplication using Java 22.0.1 with PID 15172 (C:\Users\ycode\IdeaProjects\bro\target\classes started by Anouar_bel in C:\Users\ycode\IdeaProjects\bro)
+2024-12-15 21:54:20 - The following 1 profile is active: "dev"
+2024-12-15 21:54:22 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15 21:54:22 - Finished Spring Data repository scanning in 133 ms. Found 4 JPA repository interfaces.
+2024-12-15 21:54:23 - Tomcat initialized with port 8084 (http)
+2024-12-15 21:54:23 - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:54:23 - Starting service [Tomcat]
+2024-12-15 21:54:23 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-15 21:54:23 - Initializing Spring embedded WebApplicationContext
+2024-12-15 21:54:23 - Root WebApplicationContext: initialization completed in 2568 ms
+2024-12-15 21:54:23 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15 21:54:23 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15 21:54:24 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-15 21:54:24 - HHH000026: Second-level cache disabled
+2024-12-15 21:54:24 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15 21:54:24 - HikariPool-1 - Starting...
+2024-12-15 21:54:25 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@4e7eba9f
+2024-12-15 21:54:25 - HikariPool-1 - Start completed.
+2024-12-15 21:54:25 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-15 21:54:29 - Starting BriefApplication using Java 22.0.1 with PID 29328 (C:\Users\ycode\IdeaProjects\bro\target\classes started by Anouar_bel in C:\Users\ycode\IdeaProjects\bro)
+2024-12-15 21:54:29 - The following 1 profile is active: "dev"
+2024-12-15 21:54:30 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15 21:54:30 - Finished Spring Data repository scanning in 104 ms. Found 4 JPA repository interfaces.
+2024-12-15 21:54:31 - Tomcat initialized with port 8084 (http)
+2024-12-15 21:54:31 - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:54:31 - Starting service [Tomcat]
+2024-12-15 21:54:31 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-15 21:54:31 - Initializing Spring embedded WebApplicationContext
+2024-12-15 21:54:31 - Root WebApplicationContext: initialization completed in 1999 ms
+2024-12-15 21:54:32 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15 21:54:32 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15 21:54:32 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-15 21:54:32 - HHH000026: Second-level cache disabled
+2024-12-15 21:54:32 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15 21:54:32 - HikariPool-1 - Starting...
+2024-12-15 21:54:33 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@4e7eba9f
+2024-12-15 21:54:33 - HikariPool-1 - Start completed.
+2024-12-15 21:54:33 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-15 21:54:35 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15 21:55:33 - Starting BriefApplication using Java 22.0.1 with PID 20304 (C:\Users\ycode\IdeaProjects\bro\target\classes started by Anouar_bel in C:\Users\ycode\IdeaProjects\bro)
+2024-12-15 21:55:33 - The following 1 profile is active: "dev"
+2024-12-15 21:55:34 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15 21:55:34 - Finished Spring Data repository scanning in 87 ms. Found 4 JPA repository interfaces.
+2024-12-15 21:55:35 - Tomcat initialized with port 8084 (http)
+2024-12-15 21:55:35 - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:55:35 - Starting service [Tomcat]
+2024-12-15 21:55:35 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-15 21:55:35 - Initializing Spring embedded WebApplicationContext
+2024-12-15 21:55:35 - Root WebApplicationContext: initialization completed in 1684 ms
+2024-12-15 21:55:35 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15 21:55:35 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15 21:55:35 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-15 21:55:35 - HHH000026: Second-level cache disabled
+2024-12-15 21:55:35 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15 21:55:35 - HikariPool-1 - Starting...
+2024-12-15 21:55:36 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@64f3991e
+2024-12-15 21:55:36 - HikariPool-1 - Start completed.
+2024-12-15 21:55:36 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-15 21:55:37 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15 21:55:39 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 21:55:40 - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2024-12-15 21:55:40 - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2024-12-15 21:55:41 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CustomAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-15 21:55:41 - Starting ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:55:41 - Tomcat started on port 8084 (http) with context path '/'
+2024-12-15 21:55:41 - Started BriefApplication in 9.057 seconds (process running for 9.535)
+2024-12-15 21:57:26 - Starting BriefApplication using Java 22.0.1 with PID 28024 (C:\Users\ycode\IdeaProjects\bro\target\classes started by Anouar_bel in C:\Users\ycode\IdeaProjects\bro)
+2024-12-15 21:57:26 - The following 1 profile is active: "dev"
+2024-12-15 21:57:27 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15 21:57:27 - Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2024-12-15 21:57:27 - Tomcat initialized with port 8084 (http)
+2024-12-15 21:57:27 - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:57:27 - Starting service [Tomcat]
+2024-12-15 21:57:27 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-15 21:57:27 - Initializing Spring embedded WebApplicationContext
+2024-12-15 21:57:27 - Root WebApplicationContext: initialization completed in 1710 ms
+2024-12-15 21:57:27 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15 21:57:28 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15 21:57:28 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-15 21:57:28 - HHH000026: Second-level cache disabled
+2024-12-15 21:57:28 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15 21:57:28 - HikariPool-1 - Starting...
+2024-12-15 21:57:29 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@32b95de
+2024-12-15 21:57:29 - HikariPool-1 - Start completed.
+2024-12-15 21:57:29 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-15 21:57:31 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15 21:57:33 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 21:57:34 - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2024-12-15 21:57:34 - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2024-12-15 21:57:35 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CustomAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-15 21:57:35 - Starting ProtocolHandler ["http-nio-8084"]
+2024-12-15 21:57:35 - Tomcat started on port 8084 (http) with context path '/'
+2024-12-15 21:57:35 - Started BriefApplication in 10.404 seconds (process running for 11.252)
+2024-12-15 21:59:41 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-15 21:59:41 - Initializing Servlet 'dispatcherServlet'
+2024-12-15 21:59:41 - Completed initialization in 3 ms
+2024-12-15 21:59:41 - Securing GET /
+2024-12-15 21:59:41 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 21:59:41 - Saved request http://localhost:8084/?continue to session
+2024-12-15 21:59:41 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 21:59:41 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 21:59:41 - Securing GET /error
+2024-12-15 21:59:41 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 21:59:41 - Saved request http://localhost:8084/error?continue to session
+2024-12-15 21:59:41 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 21:59:41 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 21:59:46 - Securing GET /
+2024-12-15 21:59:46 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 21:59:46 - Saved request http://localhost:8084/?continue to session
+2024-12-15 21:59:46 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 21:59:46 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 21:59:46 - Securing GET /error
+2024-12-15 21:59:46 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 21:59:46 - Saved request http://localhost:8084/error?continue to session
+2024-12-15 21:59:46 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 21:59:46 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 22:06:10 - Securing GET /
+2024-12-15 22:06:10 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:06:10 - Saved request http://localhost:8084/?continue to session
+2024-12-15 22:06:10 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:06:10 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 22:06:10 - Securing GET /error
+2024-12-15 22:06:10 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:06:10 - Saved request http://localhost:8084/error?continue to session
+2024-12-15 22:06:10 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:06:10 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 22:07:26 - Securing POST /api/auth/register
+2024-12-15 22:07:26 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:07:26 - Saved request http://localhost:8084/api/auth/register?continue to session
+2024-12-15 22:07:26 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:07:26 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 22:07:26 - Securing POST /error
+2024-12-15 22:07:26 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:07:26 - Saved request http://localhost:8084/error?continue to session
+2024-12-15 22:07:26 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:07:26 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 22:07:38 - Securing POST /api/auth/login
+2024-12-15 22:07:38 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:07:38 - Saved request http://localhost:8084/api/auth/login?continue to session
+2024-12-15 22:07:38 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:07:38 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 22:07:38 - Securing POST /error
+2024-12-15 22:07:38 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:07:38 - Saved request http://localhost:8084/error?continue to session
+2024-12-15 22:07:38 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:07:38 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@306a0478
+2024-12-15 22:10:48 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-15 22:10:49 - Graceful shutdown complete
+2024-12-15 22:10:49 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 22:10:49 - HikariPool-1 - Shutdown initiated...
+2024-12-15 22:10:49 - HikariPool-1 - Shutdown completed.
+2024-12-15 22:10:56 - Starting BriefApplication using Java 22.0.1 with PID 20916 (C:\Users\ycode\IdeaProjects\bro\target\classes started by Anouar_bel in C:\Users\ycode\IdeaProjects\bro)
+2024-12-15 22:10:56 - The following 1 profile is active: "dev"
+2024-12-15 22:10:57 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-15 22:10:57 - Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
+2024-12-15 22:10:58 - Tomcat initialized with port 8084 (http)
+2024-12-15 22:10:58 - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-15 22:10:58 - Starting service [Tomcat]
+2024-12-15 22:10:58 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-15 22:10:58 - Initializing Spring embedded WebApplicationContext
+2024-12-15 22:10:58 - Root WebApplicationContext: initialization completed in 2685 ms
+2024-12-15 22:10:58 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-15 22:10:59 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-15 22:10:59 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-15 22:10:59 - HHH000026: Second-level cache disabled
+2024-12-15 22:11:00 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-15 22:11:00 - HikariPool-1 - Starting...
+2024-12-15 22:11:00 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@66b31d46
+2024-12-15 22:11:00 - HikariPool-1 - Start completed.
+2024-12-15 22:11:01 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-15 22:11:03 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-15 22:11:05 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 22:11:07 - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2024-12-15 22:11:07 - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2024-12-15 22:11:09 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, CustomAuthenticationFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-15 22:11:09 - Starting ProtocolHandler ["http-nio-8084"]
+2024-12-15 22:11:09 - Tomcat started on port 8084 (http) with context path '/'
+2024-12-15 22:11:09 - Started BriefApplication in 14.43 seconds (process running for 15.496)
+2024-12-15 22:11:24 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-15 22:11:24 - Initializing Servlet 'dispatcherServlet'
+2024-12-15 22:11:24 - Completed initialization in 3 ms
+2024-12-15 22:11:24 - Securing POST /api/auth/register
+2024-12-15 22:11:24 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:11:24 - Saved request http://localhost:8084/api/auth/register?continue to session
+2024-12-15 22:11:24 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:11:24 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@675b47b3
+2024-12-15 22:11:24 - Securing POST /error
+2024-12-15 22:11:24 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:11:24 - Saved request http://localhost:8084/error?continue to session
+2024-12-15 22:11:24 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:11:24 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@675b47b3
+2024-12-15 22:11:35 - Securing POST /api/auth/register
+2024-12-15 22:11:35 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:11:35 - Saved request http://localhost:8084/api/auth/register?continue to session
+2024-12-15 22:11:35 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:11:35 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@675b47b3
+2024-12-15 22:11:35 - Securing POST /error
+2024-12-15 22:11:35 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:11:35 - Saved request http://localhost:8084/error?continue to session
+2024-12-15 22:11:35 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:11:35 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@675b47b3
+2024-12-15 22:11:44 - Securing POST /api/auth/register
+2024-12-15 22:11:44 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:11:44 - Saved request http://localhost:8084/api/auth/register?continue to session
+2024-12-15 22:11:44 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:11:44 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@675b47b3
+2024-12-15 22:11:44 - Securing POST /error
+2024-12-15 22:11:44 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:11:44 - Saved request http://localhost:8084/error?continue to session
+2024-12-15 22:11:44 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:11:44 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@675b47b3
+2024-12-15 22:12:17 - Securing POST /api/auth/register
+2024-12-15 22:12:17 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:12:17 - Saved request http://localhost:8084/api/auth/register?continue to session
+2024-12-15 22:12:17 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:12:17 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@675b47b3
+2024-12-15 22:12:17 - Securing POST /error
+2024-12-15 22:12:17 - Set SecurityContextHolder to anonymous SecurityContext
+2024-12-15 22:12:17 - Saved request http://localhost:8084/error?continue to session
+2024-12-15 22:12:17 - Trying to match using RequestHeaderRequestMatcher [expectedHeaderName=X-Requested-With, expectedHeaderValue=XMLHttpRequest]
+2024-12-15 22:12:17 - No match found. Using default entry point org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint@675b47b3
+2024-12-15 22:13:00 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-15 22:13:00 - Graceful shutdown complete
+2024-12-15 22:13:00 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-15 22:13:00 - HikariPool-1 - Shutdown initiated...
+2024-12-15 22:13:00 - HikariPool-1 - Shutdown completed.
+2024-12-16 10:04:33 - Starting BriefApplication using Java 22.0.1 with PID 23540 (C:\Users\ycode\IdeaProjects\bro\target\classes started by Anouar_bel in C:\Users\ycode\IdeaProjects\bro)
+2024-12-16 10:04:33 - The following 1 profile is active: "dev"
+2024-12-16 10:04:33 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16 10:04:34 - Finished Spring Data repository scanning in 53 ms. Found 4 JPA repository interfaces.
+2024-12-16 10:04:34 - Tomcat initialized with port 8084 (http)
+2024-12-16 10:04:34 - Initializing ProtocolHandler ["http-nio-8084"]
+2024-12-16 10:04:34 - Starting service [Tomcat]
+2024-12-16 10:04:34 - Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-16 10:04:34 - Initializing Spring embedded WebApplicationContext
+2024-12-16 10:04:34 - Root WebApplicationContext: initialization completed in 1245 ms
+2024-12-16 10:04:34 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-16 10:04:34 - HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-16 10:04:34 - HHH000026: Second-level cache disabled
+2024-12-16 10:04:35 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-16 10:04:35 - HikariPool-1 - Starting...
+2024-12-16 10:04:35 - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@5ddb302
+2024-12-16 10:04:35 - HikariPool-1 - Start completed.
+2024-12-16 10:04:35 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-16 10:04:36 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-16 10:04:38 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16 10:04:39 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-16 10:04:39 - Found 2 UserDetailsService beans, with names [customUserDetailsService, userDetailsService]. Global Authentication Manager will not use a UserDetailsService for username/password login. Consider publishing a single UserDetailsService bean.
+2024-12-16 10:04:39 - No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2024-12-16 10:04:39 - Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, LogoutFilter, BasicAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-12-16 10:04:39 - Starting ProtocolHandler ["http-nio-8084"]
+2024-12-16 10:04:39 - Tomcat started on port 8084 (http) with context path '/'
+2024-12-16 10:04:39 - Started BriefApplication in 7.075 seconds (process running for 7.663)
+2024-12-16 10:05:14 - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-16 10:05:14 - Graceful shutdown complete
+2024-12-16 10:05:14 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16 10:05:14 - HikariPool-1 - Shutdown initiated...
+2024-12-16 10:05:14 - HikariPool-1 - Shutdown completed.

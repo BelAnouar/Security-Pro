@@ -27,6 +27,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -75,6 +77,8 @@ public class UserServiceApplicationService implements UserService {
     }
     @Override
     public UserResponse authenticateUser(LoginRequest userDto) {
+
+
         try {
             User user = userRepository.findByLogin(userDto.getLogin())
                     .filter(u -> passwordEncoder.matches(userDto.getPassword(), u.getPassword()))
@@ -91,7 +95,17 @@ public class UserServiceApplicationService implements UserService {
             log.info("User authenticated: {}", user.getLogin());
             return userMapper.toResponse(user);
         } catch (Exception e) {
+            try {
+                InetAddress localHost = InetAddress.getLocalHost();
+                log.error("ip address: {}", localHost.getHostAddress());
+            }catch (UnknownHostException uhe) {
+                log.error("Could not retrieve local host address", uhe);
+                throw new UserNotFoundException("Invalid credentials");
+            }
+
+
             log.error("Authentication failed for user: {}", userDto.getLogin(), e);
+
             throw new UserNotFoundException("Invalid credentials");
         }
     }
